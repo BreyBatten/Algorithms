@@ -5,6 +5,17 @@ import argparse
 def find_max_profit(prices):
   
 
+def bubble_sort(arr):
+  for i in range(0, len(arr) - 1):
+
+    for j in range(0, (len(arr) - i - 1)):
+      if arr[j] > arr[j + 1]:
+        arr[j], arr[j + 1] = arr[j + 1], arr[j]
+      
+  return arr
+
+print(bubble_sort([3, 2, 5, 6, 4]))
+
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
