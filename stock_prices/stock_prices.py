@@ -3,19 +3,23 @@
 import argparse
 
 def find_max_profit(prices):
-  
+  profits = []
+  max_profit = 0
+  # loop through prices with 2 pointers
+  for i in range(0, len(prices)):
+    for j in range(i, len(prices)):
+      # if price at index j and i are equal, keep looping through prices
+      if prices[j] == prices[i]:
+        continue
+      # if prices at indexes aren't equal, subtract index j from index i
+      else:
+        profit = prices[j] - prices[i]
+        # place the difference in the profit list declared above
+        profits.append(profit)
 
-def bubble_sort(arr):
-  for i in range(0, len(arr) - 1):
-
-    for j in range(0, (len(arr) - i - 1)):
-      if arr[j] > arr[j + 1]:
-        arr[j], arr[j + 1] = arr[j + 1], arr[j]
-      
-  return arr
-
-print(bubble_sort([3, 2, 5, 6, 4]))
-
+  # return the largest item in the profits list and return
+  max_profit = max(profits)
+  return max_profit
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
